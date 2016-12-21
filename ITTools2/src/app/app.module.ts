@@ -1,16 +1,24 @@
 import { NgModule } from '@angular/core';
 import { IonicApp, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
-import { Page1 } from '../pages/page1/page1';
-import { Page2 } from '../pages/page2/page2';
+
 import { LoginPage } from '../pages/login/login';
+import { MapsPage } from '../pages/maps/maps';
+import { NotesPage } from '../pages/notes/notes';
+import { AddItem } from '../pages/add-item-page/add-item-page';
+import { ItemDetails } from '../pages/item-detail-page/item-detail-page';
+import { Storage } from '@ionic/storage';
+import { Data } from '../providers/data';
+
 
 @NgModule({
   declarations: [
     MyApp,
-    Page1,
-    Page2,
-    LoginPage
+    LoginPage,
+    MapsPage,
+    NotesPage,
+    AddItem,
+    ItemDetails
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -18,10 +26,12 @@ import { LoginPage } from '../pages/login/login';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    Page1,
-    Page2,
-    LoginPage
+    LoginPage,
+    MapsPage,
+    NotesPage,
+    AddItem,
+    ItemDetails
   ],
-  providers: []
+  providers: [Storage, Data]
 })
 export class AppModule {}
